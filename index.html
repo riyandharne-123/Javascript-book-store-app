@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body  ng-app="myApp" ng-controller="BooksCtrl">
+    <!--form-->
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-primary">Book Store</h1>
+      
+                <div class="form-group">
+                <input class="form-control" type="text" placeholder="enter book name" id="book-name"> 
+                <br>
+                <input class="form-control" type="number" placeholder="enter book ID" id="book-id"> 
+                <br>
+                <input class="form-control" type="text" placeholder="enter author's name" id="author-name"> 
+                <br>
+                <button class="btn btn-success" ng-click="AddBook()">Add book to store</button>  
+                <button class="btn btn-info" onclick="ShowBooks()">View Books in Store</button>
+   
+        </div>
+      </div>
+    <!--books-->
+    <div class="card" id="books">
+<div class="card-body"  style="overflow-x:auto;">
+<table class="table">
+<tr>
+    <th><h2 class="text-primary">Book Name</h2 class="text-primary"></th>
+    <th><h2 class="text-primary">Book ID</h2 class="text-primary"></th>
+    <th><h2 class="text-primary">Author</h2 class="text-primary"></th>
+    </tr>
+    <!--displaying books-->
+    <div class="container">
+
+    <tr ng-repeat="x in bookname" >
+    
+            <td ><h5>{{x.name}}</h5></td>
+            <td ><h5>{{x.id}}</h5></td>
+            <td ><h5>{{x.author}}</h5></td>
+ 
+        <td ><button class="btn btn-danger" ng-click="delete(x)">Delete Book</button></td>
+      </tr>
+
+    </div>
+
+</table>
+</div>
+    </div>
+</body>
+</html>
