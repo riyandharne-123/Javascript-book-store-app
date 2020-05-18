@@ -36,11 +36,12 @@
     <th><h2 class="text-primary">Book Name</h2 class="text-primary"></th>
     <th><h2 class="text-primary">Book ID</h2 class="text-primary"></th>
     <th><h2 class="text-primary">Author</h2 class="text-primary"></th>
+
     </tr>
     <!--displaying books-->
     <div class="container">
-
-    <tr ng-repeat="x in bookname" >
+        <tr> <input class="form-control" type="number" placeholder="enter book's ID" id="author-name" ng-model="test"> </tr>
+    <tr ng-repeat="x in bookname | filter : test" >
     
             <td ><h5>{{x.name}}</h5></td>
             <td ><h5>{{x.id}}</h5></td>

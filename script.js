@@ -34,7 +34,7 @@ app.controller('BooksCtrl', function($scope) {
     }
          //adding new book json object
          if(book_name==""){
-             alert('please book name');
+             alert('please enter book name');
          } else{
          bookname.push(updated_books);
          }
